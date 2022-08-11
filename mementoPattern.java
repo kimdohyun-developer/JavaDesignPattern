@@ -1,6 +1,4 @@
-package designPatternPkg;
-
-import java.util.Stack; //½ºÅÃ ÀÚ·á±¸Á¶ ¶óÀÌºê·¯¸® 
+import java.util.Stack; //ìŠ¤íƒ ìë£Œêµ¬ì¡° ë¼ì´ë¸ŒëŸ¬ë¦¬ 
 
 class Originator
 {
@@ -39,26 +37,26 @@ class Memento
 	
 	public String getState()
 	{
-		return this.state; //this.´Â ±× °´Ã¼ÀÇ °ªÀ» ¹İÈ¯ÇÏ´Â °Í 
+		return this.state; //this.ëŠ” ê·¸ ê°ì²´ì˜ ê°’ì„ ë°˜í™˜í•˜ëŠ” ê²ƒ 
 	}
 }
-//MementoÅ¬·¡½º°¡ °£´ÜÇÏ±â ¶§¹®¿¡ careTakerÅ¬·¡½º´Â ½ºÅÃ ÀÚ·á±¸Á¶¸¦ »ç¿ëÇÑ´Ù.
+//Mementoí´ë˜ìŠ¤ê°€ ê°„ë‹¨í•˜ê¸° ë•Œë¬¸ì— careTakerí´ë˜ìŠ¤ëŠ” ìŠ¤íƒ ìë£Œêµ¬ì¡°ë¥¼ ì‚¬ìš©í•œë‹¤.
 public class mementoPattern {
 
 	public static void main(String[] args) {
 		
-		//¸Ş¸àÅäÆĞÅÏÀº ÇàÀ§(behavioral)ÆĞÅÏÁß ÇÏ³ª·Î½á Æ¯Á¤ ½ÃÁ¡¿¡¼­ÀÇ °´Ã¼ ³»ºÎ »óÅÂ¸¦ 
-		//°´Ã¼È­ÇÔÀ¸·Î½á ÀÌÈÄ ¿äÃ»¿¡ µû¶ó °´Ã¼¸¦ ÇØ´ç ½ÃÁ¡ÀÇ »óÅÂ·Î µ¹¸± ¼ö ÀÖ´Â ±â´ÉÀ» Á¦°øÇÏ´Â ÆĞÅÏÀÌ´Ù.
+		//ë©”ë©˜í† íŒ¨í„´ì€ í–‰ìœ„(behavioral)íŒ¨í„´ì¤‘ í•˜ë‚˜ë¡œì¨ íŠ¹ì • ì‹œì ì—ì„œì˜ ê°ì²´ ë‚´ë¶€ ìƒíƒœë¥¼ 
+		//ê°ì²´í™”í•¨ìœ¼ë¡œì¨ ì´í›„ ìš”ì²­ì— ë”°ë¼ ê°ì²´ë¥¼ í•´ë‹¹ ì‹œì ì˜ ìƒíƒœë¡œ ëŒë¦´ ìˆ˜ ìˆëŠ” ê¸°ëŠ¥ì„ ì œê³µí•˜ëŠ” íŒ¨í„´ì´ë‹¤.
 		
 		
-		//originator: ÇöÀç»óÅÂ¸¦ Ç¥ÇöÇÏ´Â state¸¦ °¡Áö°í ÀÖÀ¸¸ç memento °´Ã¼¸¦ ÅëÇØ ÇöÀç»óÅÂ¸¦ º¯°æ
-		//memento: originatorÀÇ »óÅÂ¸¦ ³ªÅ¸³»´Â Å¬·¡½º, memento¸¦ ÀÌ¿ëÇÏ¿© originatorÀÇ »óÅÂ¸¦ º¯°æ
-		//careTaker: memento¸¦ ¼ø¼­´ë·Î ÀúÀåÇÏ¿© °ü¸®ÇÏ´Â Å¬·¡½º, stackÀÌ³ª list°°Àº ÀÚ·á±¸Á¶¸¦ »ç¿ëÇØµµ ¹«¹æÇÏ´Ù.
+		//originator: í˜„ì¬ìƒíƒœë¥¼ í‘œí˜„í•˜ëŠ” stateë¥¼ ê°€ì§€ê³  ìˆìœ¼ë©° memento ê°ì²´ë¥¼ í†µí•´ í˜„ì¬ìƒíƒœë¥¼ ë³€ê²½
+		//memento: originatorì˜ ìƒíƒœë¥¼ ë‚˜íƒ€ë‚´ëŠ” í´ë˜ìŠ¤, mementoë¥¼ ì´ìš©í•˜ì—¬ originatorì˜ ìƒíƒœë¥¼ ë³€ê²½
+		//careTaker: mementoë¥¼ ìˆœì„œëŒ€ë¡œ ì €ì¥í•˜ì—¬ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤, stackì´ë‚˜ listê°™ì€ ìë£Œêµ¬ì¡°ë¥¼ ì‚¬ìš©í•´ë„ ë¬´ë°©í•˜ë‹¤.
 		
 		Originator originator = new Originator();
-		Stack<Memento> mementos = new Stack<>(); //ÀÌºÎºĞÀÌ careTaker ¸¦ ´ë½ÅÇÒ ºÎºĞÀÌ´Ù.
+		Stack<Memento> mementos = new Stack<>(); //ì´ë¶€ë¶„ì´ careTaker ë¥¼ ëŒ€ì‹ í•  ë¶€ë¶„ì´ë‹¤.
 
-		//½ºÅØ¿¡ ÀÚ·áµéÀ» ½×´Â °Å´Ù.
+		//ìŠ¤í…ì— ìë£Œë“¤ì„ ìŒ“ëŠ” ê±°ë‹¤.
 		originator.setState("A");
 		mementos.push(originator.createMemento());
 		originator.setState(originator.getState()+"B");
@@ -68,10 +66,10 @@ public class mementoPattern {
 		originator.setState(originator.getState()+"D");
 		mementos.push(originator.createMemento());
 		
-		while(!mementos.isEmpty()) //½ºÅÃÀÌ ºñÁö ¾ÊÀ¸¸é °è¼Ó ½ÇÇàÇÑ´Ù´Â °Í.
+		while(!mementos.isEmpty()) //ìŠ¤íƒì´ ë¹„ì§€ ì•Šìœ¼ë©´ ê³„ì† ì‹¤í–‰í•œë‹¤ëŠ” ê²ƒ.
 		{
-			originator.restoreMemento(mementos.pop()); //½ºÅÃÀ» ÇÏ³ª¾¿ •û´Â°Í. - ½ºÅÃÀÌ ºô¶§±îÁö.
-			System.out.println(originator.getState()); //ÇÏ³ª¾¿ •û¸é¼­ Ãâ·Â.
+			originator.restoreMemento(mementos.pop()); //ìŠ¤íƒì„ í•˜ë‚˜ì”© Â•æ…§ì§¸. - ìŠ¤íƒì´ ë¹Œë•Œê¹Œì§€.
+			System.out.println(originator.getState()); //í•˜ë‚˜ì”© Â•é†¯åº¸ ì¶œë ¥.
 		}
 		
 		
