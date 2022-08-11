@@ -1,5 +1,3 @@
-package designPatternPkg;
-
 interface engine
 {
 }
@@ -8,7 +6,7 @@ class engineA implements engine
 {
 	public engineA()
 	{
-		System.out.println("engineA»ı¼º");
+		System.out.println("engineAìƒì„±");
 	}
 }
 
@@ -16,7 +14,7 @@ class engineB implements engine
 {
 	public engineB()
 	{
-		System.out.println("engineB»ı¼º");
+		System.out.println("engineBìƒì„±");
 	}
 }
 
@@ -28,7 +26,7 @@ class handleA implements handle
 {
 	public handleA()
 	{
-		System.out.println("handleA»ı¼º");
+		System.out.println("handleAìƒì„±");
 	}
 }
 
@@ -36,14 +34,14 @@ class handleB implements handle
 {
 	public handleB()
 	{
-		System.out.println("handleB»ı¼º");
+		System.out.println("handleBìƒì„±");
 	}
 }
 
 interface carFactory
 {
-	public engine createEngine(); //ÀÎÅÍÆäÀÌ½ºÀÇ Æ¯Â¡¶§¹®¿¡ abstract¸¦ ºÙÀÌÁö ¾Ê¾Æµµ 
-	public handle createHandle(); //Ãß»ó¸Ş¼Òµå°¡ µÈ´Ù.
+	public engine createEngine(); //ì¸í„°í˜ì´ìŠ¤ì˜ íŠ¹ì§•ë•Œë¬¸ì— abstractë¥¼ ë¶™ì´ì§€ ì•Šì•„ë„ 
+	public handle createHandle(); //ì¶”ìƒë©”ì†Œë“œê°€ ëœë‹¤.
 }
 
 class AFactory implements carFactory
@@ -90,7 +88,7 @@ class factoryOfCarFactory
 			carFactory = new BFactory();
 			break;
 		default:
-			System.out.println("Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+			System.out.println("ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			break;
 		}
 		carFactory.createEngine();
@@ -99,22 +97,22 @@ class factoryOfCarFactory
 }
 public class abstractFactroyPattern {
 	public static void main(String[] args) {
-		//Ãß»ó ÆåÅä¸® ÆĞÅÏÀº ¼­·Î °ü·ÃÀÌ ÀÖ´Â °´Ã¼µéÀ» ÅëÂ°·Î ¹­¾î¼­ ÆÑÅä¸® Å¬·¡½º¸¦ ¸¸µé°í,
-		//ÀÌµé ÆåÅä¸®¸¦ Á¶°Ç¿¡ µû¶ó »ı¼ºÇÏµµ·Ï ÆåÅä¸®¸¦ ¸¸µé¾î¼­ °´Ã¼¸¦ »ı¼ºÇÏ´Â ÆĞÅÏÀÌ´Ù.
-		//¾î¶»°Ô º¸¸é, ÆåÅä¸® ¸Ş¼Òµå ÆĞÅÏÀ» Á» ´õ Ä¸½¶È­ÇÑ ¹æ½ÄÀÌ¶ó°í º¼ ¼ö ÀÖ´Ù.
+		//ì¶”ìƒ í™í† ë¦¬ íŒ¨í„´ì€ ì„œë¡œ ê´€ë ¨ì´ ìˆëŠ” ê°ì²´ë“¤ì„ í†µì§¸ë¡œ ë¬¶ì–´ì„œ íŒ©í† ë¦¬ í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ê³ ,
+		//ì´ë“¤ í™í† ë¦¬ë¥¼ ì¡°ê±´ì— ë”°ë¼ ìƒì„±í•˜ë„ë¡ í™í† ë¦¬ë¥¼ ë§Œë“¤ì–´ì„œ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” íŒ¨í„´ì´ë‹¤.
+		//ì–´ë–»ê²Œ ë³´ë©´, í™í† ë¦¬ ë©”ì†Œë“œ íŒ¨í„´ì„ ì¢€ ë” ìº¡ìŠí™”í•œ ë°©ì‹ì´ë¼ê³  ë³¼ ìˆ˜ ìˆë‹¤.
 		
-		//ÆåÅä¸® ¸Ş¼Òµå ÆĞÅÏ°úÀÇ Â÷ÀÌ
-		//¼±ÅÃÇÏ´Â Å¬·¡½º°¡ Ãß°¡µÊ.
-		//ÀÏ°ıµÈ °´Ã¼»ı¼º
+		//í™í† ë¦¬ ë©”ì†Œë“œ íŒ¨í„´ê³¼ì˜ ì°¨ì´
+		//ì„ íƒí•˜ëŠ” í´ë˜ìŠ¤ê°€ ì¶”ê°€ë¨.
+		//ì¼ê´„ëœ ê°ì²´ìƒì„±
 		
 		factoryOfCarFactory F1 = new factoryOfCarFactory(); 
 		factoryOfCarFactory F2 = new factoryOfCarFactory(); 
 		F1.createCar("A");
 		F2.createCar("B");
 		
-		//ÆåÅä¸® ¸Ş¼Òµå ÆĞÅÏ¿¡¼­´Â ±¸¼ºÇ°¸¶´Ù ÆåÅä¸®¸¦ ¸¸µé¾î¼­ ¾î¶² °´Ã¼¸¦ Çü¼ºÇß´Âµ¥ 
-		//±× °´Ã¼ÀÇ ±¸¼ºÇ°Àº ÀÏÁ¤ÇÏ¹Ç·Î Ãß»ó ÆåÅä¸® ÆĞÅÏÀ» Àû¿ëÇÏ¿© °ü·ÃµÈ °´Ã¼µéÀ»
-		//ÇÑ²¨¹ø¿¡ Ä¸½¶È­ÇÏ¿© ÆåÅä¸®·Î ¸¸µé¾î¼­ ÀÏ°üµÇ°Ô °´Ã¼¸¦ »ı¼ºÇÏµµ·Ï ÇÑ´Ù.
+		//í™í† ë¦¬ ë©”ì†Œë“œ íŒ¨í„´ì—ì„œëŠ” êµ¬ì„±í’ˆë§ˆë‹¤ í™í† ë¦¬ë¥¼ ë§Œë“¤ì–´ì„œ ì–´ë–¤ ê°ì²´ë¥¼ í˜•ì„±í–ˆëŠ”ë° 
+		//ê·¸ ê°ì²´ì˜ êµ¬ì„±í’ˆì€ ì¼ì •í•˜ë¯€ë¡œ ì¶”ìƒ í™í† ë¦¬ íŒ¨í„´ì„ ì ìš©í•˜ì—¬ ê´€ë ¨ëœ ê°ì²´ë“¤ì„
+		//í•œêº¼ë²ˆì— ìº¡ìŠí™”í•˜ì—¬ í™í† ë¦¬ë¡œ ë§Œë“¤ì–´ì„œ ì¼ê´€ë˜ê²Œ ê°ì²´ë¥¼ ìƒì„±í•˜ë„ë¡ í•œë‹¤.
 	}
 
 }
