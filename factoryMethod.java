@@ -1,14 +1,12 @@
-package designPatternPkg;
-
 class type
 {
-	//¹Ùµğ¸¸ Á¸Àç.
+	//ë°”ë””ë§Œ ì¡´ì¬.
 }
-class typeA extends type //»ó¼Ó
+class typeA extends type //ìƒì†
 {
 	public typeA()
 	{
-		System.out.println("AÀÇ °´Ã¼°¡ »ı¼ºµÊ");
+		System.out.println("Aì˜ ê°ì²´ê°€ ìƒì„±ë¨");
 	}
 }
 
@@ -16,7 +14,7 @@ class typeB extends type
 {
 	public typeB()
 	{
-		System.out.println("BÀÇ °´Ã¼°¡ »ı¼ºµÊ");
+		System.out.println("Bì˜ ê°ì²´ê°€ ìƒì„±ë¨");
 	}
 }
 
@@ -24,7 +22,7 @@ class typeC extends type
 {
 	public typeC()
 	{
-		System.out.println("CÀÇ °´Ã¼°¡ »ı¼ºµÊ");
+		System.out.println("Cì˜ ê°ì²´ê°€ ìƒì„±ë¨");
 	}
 }
 
@@ -46,7 +44,7 @@ class factory
 			break;
 			
 		default:
-		    System.out.println("ÀÔ·ÂÇÑ ÀÌ¸§ÀÇ Å¬·¡½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+		    System.out.println("ì…ë ¥í•œ ì´ë¦„ì˜ í´ë˜ìŠ¤ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
             break;		
 		}
 		return typeReturn;
@@ -54,15 +52,15 @@ class factory
 }
 public class factoryMethod {
 	public static void main(String[] args) {
-		//ÆåÅä¸® ¸Ş¼Òµå ÆĞÅÏ(factory method pattern)
-		//¾î¶² »óÈ²¿¡¼­ Á¶°Ç¿¡ µû¶ó °´Ã¼¸¦ ´Ù¸£°Ô »ı¼ºÇØ¾ß ÇÒ ¶§°¡ ÀÖ½À´Ï´Ù.
-		//¿¹¸¦ µé¾î, »ç¿ëÀÚÀÇ ÀÔ·Â°ª¿¡ µû¶ó ÇÏ´Â ÀÏÀÌ ´Ş¶óÁú °æ¿ì
+		//í™í† ë¦¬ ë©”ì†Œë“œ íŒ¨í„´(factory method pattern)
+		//ì–´ë–¤ ìƒí™©ì—ì„œ ì¡°ê±´ì— ë”°ë¼ ê°ì²´ë¥¼ ë‹¤ë¥´ê²Œ ìƒì„±í•´ì•¼ í•  ë•Œê°€ ìˆìŠµë‹ˆë‹¤.
+		//ì˜ˆë¥¼ ë“¤ì–´, ì‚¬ìš©ìì˜ ì…ë ¥ê°’ì— ë”°ë¼ í•˜ëŠ” ì¼ì´ ë‹¬ë¼ì§ˆ ê²½ìš°
 		
-		//ÆåÅä¸® ¸Ş¼Òµå´Â ÆåÅä¸®¶ó´Â Å¬·¡½º¿¡ °´Ã¼»ı¼ºÀ» À§ÀÓÇÏ¿© ÆåÅä¸® Å¬·¡½º°¡ °´Ã¼¸¦ »ı¼ºÇÏµµ·Ï ÇÏ´Â ¹æ½ÄÀÌ´Ù.
-		//¸»±×´ë·Î °øÀå!
+		//í™í† ë¦¬ ë©”ì†Œë“œëŠ” í™í† ë¦¬ë¼ëŠ” í´ë˜ìŠ¤ì— ê°ì²´ìƒì„±ì„ ìœ„ì„í•˜ì—¬ í™í† ë¦¬ í´ë˜ìŠ¤ê°€ ê°ì²´ë¥¼ ìƒì„±í•˜ë„ë¡ í•˜ëŠ” ë°©ì‹ì´ë‹¤.
+		//ë§ê·¸ëŒ€ë¡œ ê³µì¥!
 		
 		factory C1 = new factory();
-		C1.factoryMethod("A"); //ÀÌ·±½ÄÀ¸·Î ¿ÜºÎ¿¡¼­ °¢°¢ÀÇ °´Ã¼¸¦ ºÒ·¯¿ÀÁö ¾Ê¾Æµµ ÆåÅä¸® ¸Ş¼Òµå¸¦ »ç¿ëÇÏ¸é °£´ÜÇÏ°Ô ºÒ·¯¿Ã ¼ö ÀÖ´Ù.
+		C1.factoryMethod("A"); //ì´ëŸ°ì‹ìœ¼ë¡œ ì™¸ë¶€ì—ì„œ ê°ê°ì˜ ê°ì²´ë¥¼ ë¶ˆëŸ¬ì˜¤ì§€ ì•Šì•„ë„ í™í† ë¦¬ ë©”ì†Œë“œë¥¼ ì‚¬ìš©í•˜ë©´ ê°„ë‹¨í•˜ê²Œ ë¶ˆëŸ¬ì˜¬ ìˆ˜ ìˆë‹¤.
 		C1.factoryMethod("B");
 		C1.factoryMethod("C");
 		C1.factoryMethod("D");
