@@ -1,5 +1,3 @@
-package singletonPatternPkg;
-
 class function
 {
 	public function()
@@ -8,7 +6,7 @@ class function
 	}
 	void result()
 	{
-		System.out.println("ÀÌ°Ô ½Ì±ÛÅæ ÆĞÅÏÀÔ´Ï´Ù.");
+		System.out.println("ì´ê²Œ ì‹±ê¸€í†¤ íŒ¨í„´ì…ë‹ˆë‹¤.");
 	}
 }
 
@@ -37,12 +35,12 @@ public class singletonPatternMain {
 
 	public static void main(String[] args) {
 		
-		Singleton s1 = Singleton.createInstance(); //new¸¦ ¾µ ÇÊ¿ä°¡ ¾ø´Ù.
-		Singleton s2 = Singleton.createInstance(); //new¸¦ ¾µ ÇÊ¿ä°¡ ¾ø´Ù.
-		System.out.println(s1); //½Ì±ÛÅæ ÆĞÅÏÀÇ Æ¯¼º»ó ÁÖ¼Ò°ªÀÌ °°°Ô ³ª¿À´Â °ÍÀ» È®ÀÎÇÒ ¼ö ÀÖ´Ù.
+		Singleton s1 = Singleton.createInstance(); //newë¥¼ ì“¸ í•„ìš”ê°€ ì—†ë‹¤.
+		Singleton s2 = Singleton.createInstance(); //newë¥¼ ì“¸ í•„ìš”ê°€ ì—†ë‹¤.
+		System.out.println(s1); //ì‹±ê¸€í†¤ íŒ¨í„´ì˜ íŠ¹ì„±ìƒ ì£¼ì†Œê°’ì´ ê°™ê²Œ ë‚˜ì˜¤ëŠ” ê²ƒì„ í™•ì¸í•  ìˆ˜ ìˆë‹¤.
 		System.out.println(s2);
 		
-		function f1 =  s1.create(); //¿©±âµµ  new¸¦ ¾µ ÇÊ¿ä°¡ ¾ø´Ù.
+		function f1 =  s1.create(); //ì—¬ê¸°ë„  newë¥¼ ì“¸ í•„ìš”ê°€ ì—†ë‹¤.
 		function f2 =  s1.create();
 		
 		f1.result();
