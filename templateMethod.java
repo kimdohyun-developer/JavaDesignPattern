@@ -1,49 +1,47 @@
-package designPatternPkg;
-
 abstract class Car{
 	
-	void start_car() //ÅÛÇÃ¸´ ¸Þ¼Òµå
+	void start_car() //í…œí”Œë¦¿ ë©”ì†Œë“œ
 	{
 		info();
-		fire(); //ÀÏ·±ÀÇ ¼ø¼­¸¦ ÁöÁ¤ÇØ¼­ »ç¿ëÇØ¾ßÇÒ °æ¿ì ÀÌ·¸°Ô »ç¿ëÇÏ´Â °ÍÀÌ ´õ Æí¸®ÇÏ´Ù.
+		fire(); //ì¼ëŸ°ì˜ ìˆœì„œë¥¼ ì§€ì •í•´ì„œ ì‚¬ìš©í•´ì•¼í•  ê²½ìš° ì´ë ‡ê²Œ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ë” íŽ¸ë¦¬í•˜ë‹¤.
 		rpm();
 		drive();
 	}
 	
 	void fire()
 	{
-		System.out.println("¿£ÁøÀÌ ÀÛµ¿ÇÕ´Ï´Ù.");
+		System.out.println("ì—”ì§„ì´ ìž‘ë™í•©ë‹ˆë‹¤.");
 	}
 	void rpm()
 	{
-		System.out.println("¾ÈÁ¤ÀûÀÎ È¸Àü¼ö¿¡ µµ´ÞÇß½À´Ï´Ù.");
+		System.out.println("ì•ˆì •ì ì¸ íšŒì „ìˆ˜ì— ë„ë‹¬í–ˆìŠµë‹ˆë‹¤.");
 	}
 	void drive()
 	{
-		System.out.println("ÁÖÇàÀÌ °¡´ÉÇÕ´Ï´Ù.");
+		System.out.println("ì£¼í–‰ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 	}
-	abstract void info(); //Ãß»ó¸Þ¼Òµå·Î½á ¹Û¿¡¼­ ¿À¹ö¶óÀÌµùÇÏ¿© »ç¿ëÇÒ °ÍÀÌ´Ù.
+	abstract void info(); //ì¶”ìƒë©”ì†Œë“œë¡œì¨ ë°–ì—ì„œ ì˜¤ë²„ë¼ì´ë”©í•˜ì—¬ ì‚¬ìš©í•  ê²ƒì´ë‹¤.
 }
 
-class Granger extends Car //»ó¼Ó½ÃÄÑ¼­ ÀÚ½Ä Å¬·¡½º¿¡¼­ ºÎ¸ðÅ¬·¡½ºÀÇ ¸Þ¼Òµå¸¦ »ç¿ëÇÒ ¼ö ÀÖ°Ô ÇÑ´Ù
+class Granger extends Car //ìƒì†ì‹œì¼œì„œ ìžì‹ í´ëž˜ìŠ¤ì—ì„œ ë¶€ëª¨í´ëž˜ìŠ¤ì˜ ë©”ì†Œë“œë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆê²Œ í•œë‹¤
 {
-	public void info() //Ãß»ó¸Þ¼ÒµåÀÇ Àç±¸Çö
+	public void info() //ì¶”ìƒë©”ì†Œë“œì˜ ìž¬êµ¬í˜„
 	{
-		System.out.println("Çö´ë ±×·£Àú");
+		System.out.println("í˜„ëŒ€ ê·¸ëžœì €");
 	}
 }
 class Porsche911 extends Car
 {
 	public void info() 
 	{
-		System.out.println("Æ÷¸£½¦911");
+		System.out.println("í¬ë¥´ì‰911");
 	}
 }
 class Beetle extends Car
 {
 	public void info()  
 	{
-		System.out.println("Æø½º¹Ù°Õ ºñÆ²");
+		System.out.println("í­ìŠ¤ë°”ê² ë¹„í‹€");
 	}
 }
 
@@ -52,20 +50,20 @@ class Beetle extends Car
 public class templateMethod {
 
 	public static void main(String[] args) {
-		//ÅÛÇÃ¸´ ¸Þ¼Òµå ÆÐÅÏÀº ¾Ë°í¸®ÁòÀÇ ±¸Á¶¸¦ ¸Þ¼Òµå¿¡ Á¤ÀÇÇÏ°í ÇÏÀ§ Å¬·¡½º¿¡¼­ ¾Ë°í¸®Áò ±¸Á¶ÀÇ º¯°æ¾øÀÌ ¾Ë°í¸®ÁòÀ» ÀçÁ¤ÀÇÇÑ´Ù.
-		//¾Ë°í¸®ÁòÀÌ ´Ü°èº°·Î ³ª´©¾îÁö°Å³ª, °°Àº ¿ªÇÒÀ» ÇÏ´Â ¸Þ¼ÒµåÀÌÁö¸¸ ¿©·¯°÷¿¡¼­ ´Ù¸¥ ÇüÅÂ·Î »ç¿ëÀÌ ÇÊ¿äÇÑ °æ¿ì À¯¿ëÇÏ¸ç »ó¼ÓÀ» ÅëÇØ »óÀ§(ºÎ¸ð)Å¬·¡½ºÀÇ ±â´ÉÀ» È®ÀåÇÏ±â¿¡ ¿ëÀÌÇÏ´Ù.
-		//º¯ÇÏÁö ¾Ê´Â ±â´ÉÀº »óÀ§Å¬·¡½º¿¡ ¸¸µé¾îµÎ°í ÀÚÁÖ º¯°æÇÏ°í È®ÀåÇÒ ±â´ÉÀº ÇÏÀ§ Å¬·¡½º¿¡ ¸¸µé¸é µÈ´Ù.
+		//í…œí”Œë¦¿ ë©”ì†Œë“œ íŒ¨í„´ì€ ì•Œê³ ë¦¬ì¦˜ì˜ êµ¬ì¡°ë¥¼ ë©”ì†Œë“œì— ì •ì˜í•˜ê³  í•˜ìœ„ í´ëž˜ìŠ¤ì—ì„œ ì•Œê³ ë¦¬ì¦˜ êµ¬ì¡°ì˜ ë³€ê²½ì—†ì´ ì•Œê³ ë¦¬ì¦˜ì„ ìž¬ì •ì˜í•œë‹¤.
+		//ì•Œê³ ë¦¬ì¦˜ì´ ë‹¨ê³„ë³„ë¡œ ë‚˜ëˆ„ì–´ì§€ê±°ë‚˜, ê°™ì€ ì—­í• ì„ í•˜ëŠ” ë©”ì†Œë“œì´ì§€ë§Œ ì—¬ëŸ¬ê³³ì—ì„œ ë‹¤ë¥¸ í˜•íƒœë¡œ ì‚¬ìš©ì´ í•„ìš”í•œ ê²½ìš° ìœ ìš©í•˜ë©° ìƒì†ì„ í†µí•´ ìƒìœ„(ë¶€ëª¨)í´ëž˜ìŠ¤ì˜ ê¸°ëŠ¥ì„ í™•ìž¥í•˜ê¸°ì— ìš©ì´í•˜ë‹¤.
+		//ë³€í•˜ì§€ ì•ŠëŠ” ê¸°ëŠ¥ì€ ìƒìœ„í´ëž˜ìŠ¤ì— ë§Œë“¤ì–´ë‘ê³  ìžì£¼ ë³€ê²½í•˜ê³  í™•ìž¥í•  ê¸°ëŠ¥ì€ í•˜ìœ„ í´ëž˜ìŠ¤ì— ë§Œë“¤ë©´ ëœë‹¤.
 
 		Granger c1 = new Granger(); 
 		Porsche911 c2 = new Porsche911();
 		Beetle c3 = new Beetle();
 		
-		c1.start_car(); //ÀÌ·¸°Ô ÅÛÇÃ¸´ ¸Þ¼Òµå¸¦ ºÒ·¯¿Â´Ù.
+		c1.start_car(); //ì´ë ‡ê²Œ í…œí”Œë¦¿ ë©”ì†Œë“œë¥¼ ë¶ˆëŸ¬ì˜¨ë‹¤.
 		c2.start_car();
 		c3.start_car();
 	}
 
 }
 
-//ÀåÁ¡-Áßº¹ÄÚµå¸¦ ÁÙÀÏ ¼ö ÀÖ´Ù, ÀÚ½Ä Å¬·¡½ºÀÇ ¿ªÇÒÀ» ÁÙ¿© ÇÙ½É ·ÎÁ÷ÀÇ °ü¸®°¡ ¿ëÀÌÇÏ´Ù, Á»´õ ÄÚµå¸¦ °´Ã¼ÁöÇâÀûÀ¸·Î ±¸¼ºÇÒ ¼ö ÀÖ´Ù.
-//´ÜÁ¡-Ãß»ó¸Þ¼Òµå°¡ ¸¹¾ÆÁö¸é °ü¸®°¡ ¾î·Æ´Ù, Å¬·¡½º°£ÀÇ °ü°èÄÚµå°¡ ²¿¿©¹ö¸± ¿ì·Á°¡ ÀÖ´Ù.
+//ìž¥ì -ì¤‘ë³µì½”ë“œë¥¼ ì¤„ì¼ ìˆ˜ ìžˆë‹¤, ìžì‹ í´ëž˜ìŠ¤ì˜ ì—­í• ì„ ì¤„ì—¬ í•µì‹¬ ë¡œì§ì˜ ê´€ë¦¬ê°€ ìš©ì´í•˜ë‹¤, ì¢€ë” ì½”ë“œë¥¼ ê°ì²´ì§€í–¥ì ìœ¼ë¡œ êµ¬ì„±í•  ìˆ˜ ìžˆë‹¤.
+//ë‹¨ì -ì¶”ìƒë©”ì†Œë“œê°€ ë§Žì•„ì§€ë©´ ê´€ë¦¬ê°€ ì–´ë µë‹¤, í´ëž˜ìŠ¤ê°„ì˜ ê´€ê³„ì½”ë“œê°€ ê¼¬ì—¬ë²„ë¦´ ìš°ë ¤ê°€ ìžˆë‹¤.
